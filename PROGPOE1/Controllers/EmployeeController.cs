@@ -41,7 +41,7 @@ namespace PROGPOE1.Controllers
             _context.SaveChanges();
 
             TempData["successMessage"] = "Farmer added successfully!";
-            return RedirectToAction("Index"); // or wherever appropriate
+            return RedirectToAction("Index"); // success message for adding the Farmer account correctly
         }
 
         [HttpGet]
