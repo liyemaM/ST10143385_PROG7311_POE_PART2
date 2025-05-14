@@ -16,20 +16,20 @@ namespace PROGPOE1.Controllers
             _context = context;
         }
 
-        // GET: /User/Register
+        //for the user register
         [HttpGet]
         public IActionResult Register()
         {
             return View();
         }
 
-        // POST: /User/Register
+
         [HttpPost]
         public IActionResult Register([Bind("Username,Password,Role")] AppUser user)
         {
             if (!ModelState.IsValid)
             {
-                // Print errors for debugging
+                // this will print out errors
                 foreach (var entry in ModelState)
                 {
                     foreach (var error in entry.Value.Errors)
@@ -57,14 +57,13 @@ namespace PROGPOE1.Controllers
         }
 
 
-        // GET: /User/Login
+        // for user login
         [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
 
-        // POST: /User/Login
         [HttpPost]
         public async Task<IActionResult> Login(string username, string password)
         {
@@ -93,7 +92,6 @@ namespace PROGPOE1.Controllers
 
                 TempData["successMessage"] = $"✅ Welcome, {user.Username}!";
 
-                // Redirect ALL users to the Home page after login
                 return RedirectToAction("Index", "Home");
             }
 
@@ -101,7 +99,7 @@ namespace PROGPOE1.Controllers
             return View();
         }
 
-        // POST: /User/Logout
+        // for user logout
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
