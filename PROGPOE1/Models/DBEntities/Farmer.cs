@@ -22,7 +22,6 @@ namespace PROGPOE1.Models.DBEntities
         [Required]
         public string Location { get; set; }
 
-        // Navigation property (optional)
         public List<Product>? Products { get; set; }
     }
 }
