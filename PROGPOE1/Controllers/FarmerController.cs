@@ -17,7 +17,7 @@ namespace PROGPOE1.Controllers
             _context = context;
         }
 
-        // GET: /Farmer/Dashboard
+         // For the farmer dashbaord
         public IActionResult Dashboard()
         {
             var username = User.Identity?.Name;
@@ -37,14 +37,14 @@ namespace PROGPOE1.Controllers
             return View(products);
         }
 
-        // GET: /Farmer/AddProduct
+        // for the farmer AddProduct
         [HttpGet]
         public IActionResult AddProduct()
         {
             return View();
         }
 
-        // POST: /Farmer/AddProduct
+
         [HttpPost]
         public IActionResult AddProduct(Product product)
         {
@@ -57,7 +57,7 @@ namespace PROGPOE1.Controllers
                 return RedirectToAction("Login", "User");
             }
 
-            // Check manually if required fields are filled in
+            // to check if all the needed fields in the form are there
             if (string.IsNullOrWhiteSpace(product.Name) || string.IsNullOrWhiteSpace(product.Category) || product.ProductionDate == default)
             {
                 TempData["errorMessage"] = "Please fill in all fields.";
