@@ -6,12 +6,12 @@ namespace PROGPOE1.Controllers
     {
         public IActionResult Index()
         {
-            return View(); // This will be your public landing page
+            return View(); 
         }
 
         public IActionResult AccessDenied()
         {
-            return View(); // Optional: show if user is denied access to a page
+            return View(); 
         }
     }
 }
