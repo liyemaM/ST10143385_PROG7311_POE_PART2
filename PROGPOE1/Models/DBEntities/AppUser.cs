@@ -15,11 +15,5 @@ namespace PROGPOE1.Models.DBEntities
 
         [Required]
         public string Role { get; set; } = string.Empty;
-
-        // ❌ REMOVE these — handled in Farmer.cs
-        // public string FullName { get; set; }
-        // public string FarmName { get; set; }
-        // public string Email { get; set; }
-        // public string Location { get; set; }
     }
 }
