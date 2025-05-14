@@ -1,0 +1,36 @@
+﻿@model IEnumerable<PROGPOE1.Models.DBEntities.Product>
+@{
+    ViewData["Title"] = "View & Filter Products";
+}
+
+<h2>All Products</h2>
+
+<form asp-action="ViewProducts" method="post" class="filter-form">
+    <input type="text" name="productType" class="form-control" placeholder="Product Category" />
+    <input type="date" name="fromDate" class="form-control" />
+    <input type="date" name="toDate" class="form-control" />
+    <button type="submit" class="btn btn-primary">Filter</button>
+    <a href="/Employee/ViewProducts" class="btn btn-secondary">Reset</a>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Production Date</th>
+            <th>Farmer</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Category</td>
+                <td>@product.ProductionDate.ToShortDateString()</td>
+                <td>@product.User?.Username</td>
+            </tr>
+        }
+    </tbody>
+</table>

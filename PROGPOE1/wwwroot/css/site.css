@@ -1,0 +1,210 @@
+/* === Layout Essentials === */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Lime Theme Variables */
+:root {
+    --main-green: #32CD32;
+    --dark-green: #2aa82a;
+    --light-green: #e9fbe9;
+}
+
+/* Form Container */
+.form-container {
+    max-width: 480px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Styling */
+.form-control {
+    margin-bottom: 12px;
+    padding: 9px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* Button Styling */
+.btn-primary,
+.btn-success,
+.btn-outline-success,
+.btn-secondary,
+.btn-filter,
+.btn-reset {
+    border-radius: 6px;
+    padding: 7px 14px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary,
+.btn-success {
+    background-color: var(--main-green);
+    border-color: var(--main-green);
+    color: #fff;
+}
+
+    .btn-primary:hover,
+    .btn-success:hover {
+        background-color: var(--dark-green);
+        border-color: var(--dark-green);
+    }
+
+.btn-outline-success {
+    color: var(--main-green);
+    border-color: var(--main-green);
+    background-color: transparent;
+}
+
+    .btn-outline-success:hover {
+        background-color: var(--main-green);
+        color: #fff;
+    }
+
+.btn-reset {
+    background-color: #ffffff;
+    color: var(--main-green);
+    border: 1px solid var(--main-green);
+    margin-left: 10px;
+}
+
+    .btn-reset:hover {
+        background-color: var(--main-green);
+        color: #fff;
+    }
+
+/* Tables */
+.table {
+    width: 100%;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+    .table th,
+    .table td {
+        padding: 10px 12px;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .table th {
+        background-color: transparent;
+        color: var(--main-green);
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+/* Table Button Alignment */
+.table-action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Filter Form Layout */
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+    .filter-form input,
+    .filter-form select {
+        flex: 1 1 150px;
+    }
+
+/* Home Page Styling */
+.home-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 30px;
+    max-width: 550px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.12);
+}
+
+    .home-container h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+.highlight {
+    color: var(--main-green);
+    font-weight: bold;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* Alerts */
+.alert {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.alert-success {
+    background-color: #e0fce0;
+    color: #226622;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #842029;
+}
+.custom-footer {
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    padding: 15px 0;
+    color: #666;
+    position: relative;
+    bottom: 0;
+    margin-top: 50px;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+    font-size: 14px;
+}
+
+.footer-content .highlight {
+    color: var(--main-green);
+    font-weight: 600;
+}

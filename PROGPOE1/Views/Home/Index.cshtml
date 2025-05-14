@@ -1,0 +1,33 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+@{
+    ViewData["Title"] = "Home";
+    var isAuthenticated = User.Identity.IsAuthenticated;
+    var role = User.FindFirst(ClaimTypes.Role)?.Value;
+}
+
+<div class="home-container">
+    <h1>Welcome to <span class="highlight">Agri-Energy Connect</span></h1>
+
+    @if (!isAuthenticated)
+    {
+        <p class="lead">A platform to link farmers and energy professionals.</p>
+        <a href="/User/Register" class="btn btn-success">Get Started</a>
+    }
+    else if (role == "Employee")
+    {
+        <p class="lead">You are logged in as <strong>Employee</strong>. You can:</p>
+        <div class="btn-group">
+            <a href="/Employee/AddFarmer" class="btn btn-success">Add Farmer Profile</a>
+            <a href="/Employee/ViewProducts" class="btn btn-outline-success">View & Filter Products</a>
+        </div>
+    }
+    else if (role == "Farmer")
+    {
+        <p class="lead">You are logged in as <strong>Farmer</strong>. You can:</p>
+        <div class="btn-group">
+            <a href="/Farmer/AddProduct" class="btn btn-success">Add Product</a>
+            <a href="/Farmer/Dashboard" class="btn btn-outline-success">My Products</a>
+        </div>
+    }
+</div>

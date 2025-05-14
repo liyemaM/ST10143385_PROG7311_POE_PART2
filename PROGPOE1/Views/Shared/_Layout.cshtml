@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Agri-Energy Connect</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow-sm">
+            <div class="container">
+                <a class="navbar-brand text-success" href="/">Agri-Energy Connect</a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item"><a class="nav-link" href="/Home/Index">Home</a></li>
+
+                            @if (User.IsInRole("Employee"))
+                            {
+                                <li class="nav-item"><a class="nav-link" href="/Employee">Dashboard</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/Employee/AddFarmer">Add Farmer</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/Employee/ViewProducts">View Products</a></li>
+                            }
+                            else if (User.IsInRole("Farmer"))
+                            {
+                                <li class="nav-item"><a class="nav-link" href="/Farmer/Dashboard">My Products</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/Farmer/AddProduct">Add Product</a></li>
+                            }
+
+                            <li class="nav-item">
+                                <form method="post" asp-controller="User" asp-action="Logout">
+                                    <button type="submit" class="btn btn-outline-success btn-sm ms-2">Logout</button>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item"><a class="nav-link" href="/User/Login">Login</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/User/Register">Register</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" class="flex-grow-1">
+        <div class="container py-4">
+            @RenderBody()
+        </div>
+    </main>
+
+    <footer class="footer mt-auto py-3 bg-light border-top shadow-sm">
+        <div class="container text-center">
+            <span class="text-muted">© 2025 Agri-Energy Connect</span>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
