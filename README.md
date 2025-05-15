@@ -32,7 +32,7 @@ To be able to assist staff members in managing farmers and their product submiss
 --------------------------------------------------------------------------------------------------------------
 Go to appsettings.json for your connection string 
 
-![Screenshot 2025-05-14 170441](https://github.com/user-attachments/assets/0ac818d0-8a87-4eaa-b8d4-e70edeeae873)
+![Screenshot 2025-05-15 122122](https://github.com/user-attachments/assets/4cf3dc54-69eb-42fb-aca2-9da7cbeaf8c0)
 
 5.Run Migrations 
 --------------------------------------------------------------------------------------------------------------
